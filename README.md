@@ -1,6 +1,8 @@
 # Systemind
 Dokumen dan Template Untuk Akselerasi Pengembangan Sistem dengan AI Pairing
 
+![](2025-06-10_16-02.png)
+
 ## Trigger
 
 Awalnya saya ngalir aja dari cerita ini di [threads saya](https://www.threads.com/@irfnrdh/post/DKtYpGnSuvl)  
