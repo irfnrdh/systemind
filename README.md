@@ -1,5 +1,7 @@
 # Systemind
-Dokumen dan Template Untuk Akselerasi Pengembangan Sistem dengan AI Pairing
+Dokumen dan Template (Design Document Templates) Untuk Akselerasi Pengembangan Sistem dengan AI Pairing
+
+Dibuat untuk : Founder, SoloPreneur, Indie Maker, CTO (Chief Technology Officer), IT Team Leader, [Software Architect](https://roadmap.sh/software-architect), Full-stack, Software Engineer, Vibe Coder
 
 ![](2025-06-10_16-02.png)
 
