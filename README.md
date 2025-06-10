@@ -72,3 +72,4 @@ lalu berlanjut ke **Enhanced Version**
 - https://arc42.org/
 - https://www.openproject.org/
 - https://c4model.com/
+- https://github.com/anttiviljami/product-engineer-manifesto
