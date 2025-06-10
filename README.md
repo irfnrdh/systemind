@@ -1,5 +1,5 @@
 # Systemind
-Dokumen dan Template Untuk Pengembangan Sistem
+Dokumen dan Template Untuk Akselerasi Pengembangan Sistem dengan AI Pairing
 
 ## Trigger
 
