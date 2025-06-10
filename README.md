@@ -1,4 +1,4 @@
-# [Systemind](/faq.md) 🚀 
+# 🚀 [Systemind](/faq.md) 
 Dokumen dan Template (Design Document Templates) Untuk Akselerasi Pengembangan Sistem dengan AI Pairing
 
 Dibuat untuk : Founder, SoloPreneur, Indie Maker, CTO (Chief Technology Officer), Digital Transformation Specialist, IT Team Leader, [Software Architect](https://roadmap.sh/software-architect), Full-stack, Software Engineer, Vibe Coder, Technical Writer, Solution Architect
