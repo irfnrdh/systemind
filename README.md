@@ -73,3 +73,4 @@ lalu berlanjut ke **Enhanced Version**
 - https://www.openproject.org/
 - https://c4model.com/
 - https://github.com/anttiviljami/product-engineer-manifesto
+- https://www.youtube.com/watch?v=_JjQRZEOOY8
