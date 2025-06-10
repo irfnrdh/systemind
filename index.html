@@ -196,9 +196,11 @@
 </head>
 <body>
     <div class="container">
+
         <h1>Systemind</h1>
         <p class="subtitle">Daftar Lengkap Dokumen Pengembangan Sistem</p>
-        
+  
+
         <div class="stats">
             <div class="stat-card">
                 <div class="stat-number" id="totalDocs">80</div>
@@ -230,9 +232,6 @@
                     <option value="Compliance">Compliance</option>
                     <option value="Modern Architecture">Modern Architecture</option>
                     <option value="DevOps">DevOps</option>
-                    <option value="Manajemen Proyek">Manajemen Proyek</option>
-                    <option value="Quality Assurance">Quality Assurance</option>
-                    <option value="Business Intelligence">Business Intelligence</option>
                 </select>
             </div>
             
@@ -278,6 +277,7 @@
                     </tr>
                 </thead>
                 <tbody id="tableBody">
+                    <!-- Data akan diisi oleh JavaScript -->
                 </tbody>
             </table>
         </div>
@@ -285,6 +285,7 @@
 
     <script>
         const documentData = [
+            // Original 60 documents dengan enhancement
             {no: 1, tahapan: "Inisiasi / Perencanaan", nama: "Dokumen Kebutuhan Bisnis (BRD)", deskripsi: "Menjelaskan latar belakang, tujuan, dan manfaat proyek.", file: "01_Business_Requirements_Document_BRD.docx", prioritas: "Critical", template: "Ya", estimasi: "3-5 hari", stakeholder: "BA, PM", dependencies: "-", compliance: "ISO 27001", tools: "MS Word, Confluence", phase: "1"},
             {no: 2, tahapan: "Inisiasi / Perencanaan", nama: "Studi Kelayakan", deskripsi: "Evaluasi teknis, ekonomi, operasional, hukum, dan jadwal proyek.", file: "02_Studi_Kelayakan_Proyek.docx", prioritas: "Critical", template: "Ya", estimasi: "1-2 minggu", stakeholder: "BA, Architect", dependencies: "1", compliance: "-", tools: "MS Word, Excel", phase: "1"},
             {no: 3, tahapan: "Inisiasi / Perencanaan", nama: "Analisis Stakeholder", deskripsi: "Identifikasi pemangku kepentingan dan perannya.", file: "03_Stakeholder_Analysis.docx", prioritas: "High", template: "Ya", estimasi: "2-3 hari", stakeholder: "PM, BA", dependencies: "1", compliance: "-", tools: "MS Word, Visio", phase: "1"},
@@ -312,18 +313,41 @@
             {no: 25, tahapan: "Operasi & Pemeliharaan", nama: "Laporan Monitoring & Log", deskripsi: "Data operasional harian/mingguan: log, metrik, uptime.", file: "25_System_Operational_Log_Report.xlsx", prioritas: "Medium", template: "Ya", estimasi: "Per Periode", stakeholder: "SysAdmin, DevOps", dependencies: "23", compliance: "-", tools: "Excel, Grafana", phase: "3"},
             {no: 26, tahapan: "Keamanan", nama: "Dokumen Analisis Risiko", deskripsi: "Identifikasi risiko teknis dan non-teknis serta mitigasinya.", file: "26_Risk_Assessment_Report.docx", prioritas: "Critical", template: "Ya", estimasi: "1-2 minggu", stakeholder: "Security Officer, Architect", dependencies: "5,8", compliance: "ISO 27005", tools: "Confluence, Risk Matrix", phase: "1"},
             {no: 27, tahapan: "Keamanan", nama: "Incident Response Plan", deskripsi: "Prosedur jika terjadi insiden keamanan/sistem.", file: "27_Incident_Response_Plan.docx", prioritas: "High", template: "Ya", estimasi: "5-7 hari", stakeholder: "Security Team, DevOps", dependencies: "26", compliance: "ISO 27035", tools: "Confluence", phase: "2"},
-            {no: 28, tahapan: "Manajemen Proyek", nama: "Project Charter", deskripsi: "Dokumen otorisasi formal untuk memulai proyek.", file: "28_Project_Charter.docx", prioritas: "Critical", template: "Ya", estimasi: "2-3 hari", stakeholder: "PM, Sponsor", dependencies: "1", compliance: "PMI", tools: "MS Word", phase: "1"},
-            {no: 29, tahapan: "Manajemen Proyek", nama: "Work Breakdown Structure (WBS)", deskripsi: "Dekomposisi hierarkis dari pekerjaan proyek.", file: "29_Work_Breakdown_Structure_WBS.xlsx", prioritas: "High", template: "Ya", estimasi: "3-5 hari", stakeholder: "PM, Team Lead", dependencies: "28", compliance: "PMI", tools: "MS Project, Excel", phase: "1"},
-            {no: 30, tahapan: "Manajemen Proyek", nama: "Jadwal Proyek", deskripsi: "Timeline detail aktivitas, milestone, dan dependensi.", file: "30_Project_Schedule.mpp", prioritas: "Critical", template: "Ya", estimasi: "5-7 hari", stakeholder: "PM, Team Lead", dependencies: "29", compliance: "PMI", tools: "MS Project, Gantt Chart", phase: "1"},
-            {no: 31, tahapan: "Manajemen Proyek", nama: "Rencana Manajemen Risiko", deskripsi: "Identifikasi, analisis, dan rencana mitigasi risiko proyek.", file: "31_Risk_Management_Plan.docx", prioritas: "High", template: "Ya", estimasi: "1 minggu", stakeholder: "PM, Risk Manager", dependencies: "26,30", compliance: "PMI", tools: "MS Word, Risk Register", phase: "1"},
-            {no: 32, tahapan: "Manajemen Proyek", nama: "Rencana Komunikasi", deskripsi: "Strategi komunikasi stakeholder selama proyek.", file: "32_Communication_Plan.docx", prioritas: "Medium", template: "Ya", estimasi: "2-3 hari", stakeholder: "PM, Communication Lead", dependencies: "3", compliance: "PMI", tools: "MS Word", phase: "2"},
-            {no: 33, tahapan: "Manajemen Proyek", nama: "Laporan Status Proyek", deskripsi: "Update berkala progress, issue, dan milestone proyek.", file: "33_Project_Status_Report.pptx", prioritas: "Medium", template: "Ya", estimasi: "Per Periode", stakeholder: "PM", dependencies: "30", compliance: "PMI", tools: "PowerPoint, Dashboard", phase: "3"},
-            {no: 34, tahapan: "Compliance", nama: "Dokumen Audit", deskripsi: "Checklist dan bukti untuk audit internal/eksternal.", file: "34_Audit_Documentation.docx", prioritas: "High", template: "Ya", estimasi: "1-2 minggu", stakeholder: "Compliance Officer, Auditor", dependencies: "26", compliance: "SOX, ISO 27001", tools: "MS Word, Audit Tools", phase: "2"},
-            {no: 35, tahapan: "Compliance", nama: "Privacy Impact Assessment", deskripsi: "Evaluasi dampak privasi dari sistem terhadap data personal.", file: "35_Privacy_Impact_Assessment_PIA.pdf", prioritas: "Critical", template: "Ya", estimasi: "1-2 minggu", stakeholder: "Privacy Officer, Legal", dependencies: "9,26", compliance: "GDPR, UU PDP", tools: "MS Word", phase: "1"},
-            {no: 36, tahapan: "Compliance", nama: "Data Processing Agreement", deskripsi: "Perjanjian pemrosesan data dengan pihak ketiga.", file: "36_Data_Processing_Agreement_DPA.pdf", prioritas: "High", template: "Ya", estimasi: "1 minggu", stakeholder: "Legal, Privacy Officer", dependencies: "35", compliance: "GDPR, UU PDP", tools: "MS Word", phase: "2"},
-            {no: 37, tahapan: "Operasi & Pemeliharaan", nama: "Disaster Recovery Plan", deskripsi: "Rencana pemulihan sistem jika terjadi bencana.", file: "37_Disaster_Recovery_Plan_DRP.docx", prioritas: "Critical", template: "Ya", estimasi: "2-3 minggu", stakeholder: "IT Manager, SysAdmin", dependencies: "23,26", compliance: "ISO 22301", tools: "MS Word", phase: "1"},
-            {no: 38, tahapan: "Operasi & Pemeliharaan", nama: "Business Continuity Plan", deskripsi: "Rencana kelangsungan bisnis saat sistem terganggu.", file: "38_Business_Continuity_Plan_BCP.docx", prioritas: "High", template: "Ya", estimasi: "2-3 minggu", stakeholder: "Business Owner, IT Manager", dependencies: "37", compliance: "ISO 22301", tools: "MS Word", phase: "2"},
-            {no: 39, tahapan: "Operasi & Pemeliharaan", nama: "Change Management Process", deskripsi: "Prosedur formal untuk perubahan sistem produksi.", file: "39_Change_Management_Process.docx", prioritas: "High", template: "Ya", estimasi: "1 minggu", stakeholder: "Change Manager, DevOps", dependencies: "23", compliance: "ITIL", tools: "ServiceNow, MS Word", phase: "2"},
+            {no: 28, tahapan: "Compliance", nama: "Regulatory Compliance Checklist", deskripsi: "Checklist untuk standar industri (misal: ISO, HIPAA, GDPR).", file: "28_Regulatory_Compliance_Checklist.xlsx", prioritas: "High", template: "Ya", estimasi: "1 minggu", stakeholder: "Compliance Officer", dependencies: "26", compliance: "Various", tools: "Excel", phase: "2"},
+            {no: 29, tahapan: "Manajemen Konfigurasi", nama: "System Configuration Details", deskripsi: "Pengaturan sistem, environment variable, versi pustaka, dsb.", file: "29_System_Configuration_Details.docx", prioritas: "Medium", template: "Ya", estimasi: "3-5 hari", stakeholder: "DevOps, Developer", dependencies: "8", compliance: "-", tools: "Confluence", phase: "2"},
+            {no: 30, tahapan: "Manajemen Proyek", nama: "RACI Matrix Project Roles", deskripsi: "Menentukan siapa yang Responsible, Accountable, Consulted, Informed untuk tiap tugas.", file: "30_RACI_Matrix_Project_Roles.xlsx", prioritas: "Medium", template: "Ya", estimasi: "2-3 hari", stakeholder: "PM", dependencies: "3", compliance: "-", tools: "Excel", phase: "1"},
+            {no: 31, tahapan: "Manajemen Proyek", nama: "Project Schedule Gantt Chart", deskripsi: "Jadwal pengembangan, milestone, dan tenggat waktu.", file: "31_Project_Schedule_Gantt_Chart.xlsx", prioritas: "High", template: "Ya", estimasi: "3-5 hari", stakeholder: "PM", dependencies: "1,2", compliance: "-", tools: "MS Project, Excel", phase: "1"},
+            {no: 32, tahapan: "Manajemen Versi", nama: "Versioning Strategy Guide", deskripsi: "Konvensi penomoran versi dan rilis (semver, misal 1.0.0).", file: "32_Versioning_Strategy_Guide.docx", prioritas: "Medium", template: "Ya", estimasi: "1-2 hari", stakeholder: "Tech Lead", dependencies: "12", compliance: "-", tools: "Confluence", phase: "2"},
+            {no: 33, tahapan: "Manajemen Backup", nama: "Backup and Restore Policy", deskripsi: "Frekuensi dan prosedur backup sistem & data.", file: "33_Backup_and_Restore_Policy.docx", prioritas: "High", template: "Ya", estimasi: "3-5 hari", stakeholder: "SysAdmin", dependencies: "23", compliance: "ISO 27001", tools: "Confluence", phase: "2"},
+            {no: 34, tahapan: "Audit & Dokumentasi Legal", nama: "Internal Audit Report", deskripsi: "Laporan audit pengujian sistem internal, bila diperlukan.", file: "34_Internal_Audit_Report.pdf", prioritas: "Medium", template: "Ya", estimasi: "1-2 minggu", stakeholder: "Auditor", dependencies: "28", compliance: "Various", tools: "MS Word", phase: "3"},
+            {no: 35, tahapan: "Dokumentasi DevOps", nama: "CI/CD Pipeline Documentation", deskripsi: "Detail pipeline otomatisasi build, test, dan deploy.", file: "35_CI_CD_Pipeline_Documentation.docx", prioritas: "High", template: "Ya", estimasi: "1 minggu", stakeholder: "DevOps", dependencies: "12,19", compliance: "-", tools: "Jenkins, GitLab CI", phase: "2"},
+            {no: 36, tahapan: "Dokumentasi Teknis Lanjutan", nama: "Data Flow Diagram (DFD)", deskripsi: "Visualisasi aliran data dalam sistem, level konteks hingga level detail.", file: "36_Data_Flow_Diagram_DFD.pdf", prioritas: "Medium", template: "Ya", estimasi: "3-5 hari", stakeholder: "Architect, BA", dependencies: "4,7", compliance: "-", tools: "Lucidchart, Draw.io", phase: "1"},
+            {no: 37, tahapan: "Arsitektur & Infrastruktur", nama: "IaC Infrastructure Provisioning Guide", deskripsi: "Penjelasan script Terraform, Ansible, atau YAML CI/CD untuk provisioning.", file: "37_IaC_Infrastructure_Provisioning_Guide.md", prioritas: "High", template: "Partial", estimasi: "1 minggu", stakeholder: "DevOps, Architect", dependencies: "8", compliance: "-", tools: "Terraform, Ansible", phase: "2"},
+            {no: 38, tahapan: "Pemeliharaan & Upgrade", nama: "Product Roadmap", deskripsi: "Rencana fitur dan pengembangan untuk versi mendatang.", file: "38_Product_Roadmap.docx", prioritas: "Medium", template: "Ya", estimasi: "1-2 minggu", stakeholder: "Product Owner", dependencies: "1", compliance: "-", tools: "Confluence, Notion", phase: "3"},
+            {no: 39, tahapan: "Operasi", nama: "Disaster Recovery Plan (DRP)", deskripsi: "Rencana pemulihan sistem dalam situasi kegagalan total atau bencana.", file: "39_Disaster_Recovery_Plan.docx", prioritas: "Critical", template: "Ya", estimasi: "1-2 minggu", stakeholder: "Security, DevOps", dependencies: "23,26", compliance: "ISO 27031", tools: "Confluence", phase: "2"},
+            {no: 40, tahapan: "Operasi", nama: "Downtime Handling Procedure", deskripsi: "Prosedur dan komunikasi ketika terjadi downtime terencana maupun tidak.", file: "40_Downtime_Handling_Procedure.docx", prioritas: "High", template: "Ya", estimasi: "3-5 hari", stakeholder: "DevOps, Support", dependencies: "23", compliance: "-", tools: "Confluence", phase: "2"},
+            {no: 41, tahapan: "Dokumentasi Pengguna Lanjutan", nama: "User FAQ Document", deskripsi: "Pertanyaan umum dan solusi terkait penggunaan aplikasi.", file: "41_User_FAQ_Document.pdf", prioritas: "Low", template: "Ya", estimasi: "1 minggu", stakeholder: "Support, BA", dependencies: "20", compliance: "-", tools: "GitBook", phase: "3"},
+            {no: 42, tahapan: "Dokumentasi Bisnis", nama: "ROI Project Evaluation Report", deskripsi: "Evaluasi biaya vs manfaat dari implementasi sistem.", file: "42_ROI_Project_Evaluation_Report.docx", prioritas: "Medium", template: "Ya", estimasi: "1-2 minggu", stakeholder: "Management", dependencies: "2", compliance: "-", tools: "Excel", phase: "3"},
+            {no: 43, tahapan: "Dokumentasi Pengetahuan", nama: "Internal Knowledge Base Link", deskripsi: "Dokumentasi terpusat untuk tim pengembang dan support.", file: "43_Internal_Knowledge_Base_Link.md", prioritas: "Medium", template: "Ya", estimasi: "Ongoing", stakeholder: "All", dependencies: "-", compliance: "-", tools: "Confluence, Notion", phase: "3"},
+            {no: 44, tahapan: "Legal & Privasi", nama: "Privacy Policy", deskripsi: "Wajib untuk aplikasi yang mengumpulkan data pengguna.", file: "44_Privacy_Policy.pdf", prioritas: "High", template: "Ya", estimasi: "1 minggu", stakeholder: "Legal", dependencies: "28", compliance: "GDPR", tools: "MS Word", phase: "2"},
+            {no: 45, tahapan: "Legal & Privasi", nama: "Terms of Service", deskripsi: "Syarat dan ketentuan penggunaan aplikasi, terutama jika berbasis publik/web.", file: "45_Terms_of_Service.pdf", prioritas: "High", template: "Ya", estimasi: "1 minggu", stakeholder: "Legal", dependencies: "44", compliance: "-", tools: "MS Word", phase: "2"},
+            {no: 46, tahapan: "Monitoring & Observability", nama: "Monitoring Setup Guide", deskripsi: "Setup metrik, alerting, dan health check.", file: "46_Monitoring_Setup_Guide.docx", prioritas: "High", template: "Ya", estimasi: "1 minggu", stakeholder: "DevOps, SRE", dependencies: "23", compliance: "-", tools: "Grafana, Prometheus", phase: "2"},
+            {no: 47, tahapan: "Dukungan Teknis", nama: "SOP Ticket Handling", deskripsi: "Prosedur menangani laporan bug atau keluhan pengguna.", file: "47_SOP_Ticket_Handling.docx", prioritas: "Medium", template: "Ya", estimasi: "3-5 hari", stakeholder: "Support", dependencies: "18", compliance: "-", tools: "Jira Service Desk", phase: "3"},
+            {no: 48, tahapan: "Dokumentasi Integrasi", nama: "External API Integration Guide", deskripsi: "Cara sistem berinteraksi dengan layanan pihak ketiga.", file: "48_External_API_Integration_Guide.docx", prioritas: "High", template: "Ya", estimasi: "1 minggu", stakeholder: "Developer", dependencies: "13", compliance: "-", tools: "Postman", phase: "2"},
+            {no: 49, tahapan: "Skalabilitas & Replikasi", nama: "Scaling and Load Balancing Strategy", deskripsi: "Cara sistem menangani pertumbuhan trafik atau pengguna.", file: "49_Scaling_and_Load_Balancing_Strategy.docx", prioritas: "High", template: "Partial", estimasi: "1 minggu", stakeholder: "Architect, DevOps", dependencies: "8", compliance: "-", tools: "Confluence", phase: "2"},
+            {no: 50, tahapan: "Retrospektif Proyek", nama: "Project Retrospective Report", deskripsi: "Apa yang berhasil, apa yang gagal, dan pembelajaran dari proyek.", file: "50_Project_Retrospective_Report.docx", prioritas: "Medium", template: "Ya", estimasi: "1 minggu", stakeholder: "PM, Team", dependencies: "-", compliance: "-", tools: "Confluence", phase: "3"},
+            {no: 51, tahapan: "Compliance/Legal", nama: "NDA Template", deskripsi: "Jika melibatkan pihak ketiga, vendor, atau pengembang luar.", file: "51_NDA_Template.pdf", prioritas: "Medium", template: "Ya", estimasi: "1-2 hari", stakeholder: "Legal", dependencies: "-", compliance: "-", tools: "MS Word", phase: "1"},
+            {no: 52, tahapan: "Proyek Agile / Scrum", nama: "Sprint Planning Review", deskripsi: "Untuk tim yang menggunakan metode Scrum/Agile.", file: "52_Sprint_Planning_Review.docx", prioritas: "Medium", template: "Ya", estimasi: "Per Sprint", stakeholder: "Scrum Master", dependencies: "-", compliance: "-", tools: "Confluence", phase: "3"},
+            {no: 53, tahapan: "Manajemen Aset", nama: "IT Asset Inventory", deskripsi: "Daftar lengkap server, lisensi, perangkat lunak, dan tools yang digunakan.", file: "53_IT_Asset_Inventory.xlsx", prioritas: "Medium", template: "Ya", estimasi: "1 minggu", stakeholder: "IT Admin", dependencies: "-", compliance: "-", tools: "Excel", phase: "3"},
+            {no: 54, tahapan: "Data & Analitik", nama: "Data Architecture Document", deskripsi: "Untuk sistem yang intensif data (big data, analytics, ML, dll).", file: "54_Data_Architecture_Document.docx", prioritas: "High", template: "Partial", estimasi: "1-2 minggu", stakeholder: "Data Architect", dependencies: "9", compliance: "GDPR", tools: "Confluence", phase: "2"},
+            {no: 55, tahapan: "Sistem Berbasis AI/ML", nama: "Model Documentation Card", deskripsi: "Jika ada komponen AI/ML, menjelaskan model, dataset, performa, bias, dll.", file: "55_Model_Documentation_Card.docx", prioritas: "High", template: "Partial", estimasi: "1-2 minggu", stakeholder: "Data Scientist", dependencies: "54", compliance: "-", tools: "Jupyter Notebook", phase: "2"},
+            {no: 56, tahapan: "Sistem Berbasis IoT", nama: "IoT Device Communication Protocols", deskripsi: "Untuk sistem dengan sensor, hardware, atau perangkat embedded.", file: "56_IoT_Device_Communication_Protocols.docx", prioritas: "High", template: "Ya", estimasi: "1 minggu", stakeholder: "IoT Engineer", dependencies: "8", compliance: "-", tools: "MS Word", phase: "2"},
+            {no: 57, tahapan: "Keamanan Tingkat Lanjut", nama: "Penetration Test Report", deskripsi: "Jika diwajibkan audit keamanan tingkat lanjut.", file: "57_Penetration_Test_Report.pdf", prioritas: "Critical", template: "Ya", estimasi: "2-3 minggu", stakeholder: "Security Tester", dependencies: "26", compliance: "OWASP", tools: "Kali Linux", phase: "1"},
+            {no: 58, tahapan: "Kesiapan Audit Eksternal", nama: "Audit Trail and Data Integrity", deskripsi: "Untuk aplikasi keuangan, kesehatan, atau legal.", file: "58_Audit_Trail_and_Data_Integrity.docx", prioritas: "High", template: "Ya", estimasi: "1 minggu", stakeholder: "Auditor", dependencies: "28", compliance: "SOX", tools: "Confluence", phase: "2"},
+            {no: 59, tahapan: "Sertifikasi Produk", nama: "System Certification Records", deskripsi: "Jika produk disiapkan untuk sertifikasi formal.", file: "59_System_Certification_Records.pdf", prioritas: "High", template: "Ya", estimasi: "Varies", stakeholder: "Compliance Officer", dependencies: "28", compliance: "Various", tools: "MS Word", phase: "3"},
+            {no: 60, tahapan: "Open Source Compliance", nama: "OpenSource License Attribution", deskripsi: "Jika sistem menggunakan banyak open-source libraries (terutama untuk publikasi).", file: "60_OpenSource_License_Attribution.txt", prioritas: "Medium", template: "Ya", estimasi: "1 minggu", stakeholder: "Legal, Developer", dependencies: "-", compliance: "Various", tools: "Text Editor", phase: "3"},
+
+            // Additional 20 documents for enhanced version
             {no: 61, tahapan: "Analisis", nama: "Service Level Objectives (SLO) Document", deskripsi: "Target performa spesifik untuk setiap service", file: "61_Service_Level_Objectives_SLO.docx", prioritas: "High", template: "Ya", estimasi: "3-5 hari", stakeholder: "SRE, Architect", dependencies: "5,8", compliance: "SLA", tools: "Confluence", phase: "2"},
             {no: 62, tahapan: "Desain", nama: "Microservices Communication Pattern", deskripsi: "Pola komunikasi antar services (sync/async, event-driven)", file: "62_Microservices_Communication_Design.pdf", prioritas: "High", template: "Partial", estimasi: "1 minggu", stakeholder: "Architect, Tech Lead", dependencies: "8", compliance: "-", tools: "Draw.io, Lucidchart", phase: "2"},
             {no: 63, tahapan: "Desain", nama: "Caching Strategy Document", deskripsi: "Strategi caching di berbagai layer (Redis, CDN, Application)", file: "63_Caching_Strategy_Guide.docx", prioritas: "Medium", template: "Ya", estimasi: "3-5 hari", stakeholder: "Architect, Developer", dependencies: "8,9", compliance: "-", tools: "Confluence", phase: "2"},
@@ -341,26 +365,29 @@
             {no: 75, tahapan: "Compliance", nama: "Data Governance Policy", deskripsi: "Kebijakan pengelolaan data, data lineage", file: "75_Data_Governance_Policy.pdf", prioritas: "High", template: "Ya", estimasi: "1-2 minggu", stakeholder: "Data Officer, Legal", dependencies: "9", compliance: "GDPR, UU PDP", tools: "MS Word", phase: "2"},
             {no: 76, tahapan: "Modern Architecture", nama: "Event Streaming Architecture", deskripsi: "Design untuk Apache Kafka, event sourcing", file: "76_Event_Streaming_Architecture.pdf", prioritas: "Medium", template: "Partial", estimasi: "1-2 minggu", stakeholder: "Data Architect", dependencies: "8,62", compliance: "-", tools: "Kafka, Draw.io", phase: "3"},
             {no: 77, tahapan: "Modern Architecture", nama: "Serverless Architecture Guide", deskripsi: "AWS Lambda, Azure Functions implementation", file: "77_Serverless_Architecture_Guide.docx", prioritas: "Medium", template: "Partial", estimasi: "1 minggu", stakeholder: "Cloud Architect", dependencies: "8", compliance: "-", tools: "AWS, Terraform", phase: "3"},
-            {no: 78, tahapan: "DevOps", nama: "GitOps Workflow Documentation", deskripsi: "Git-based deployment workflow (ArgoCD, Flux)", file: "78_GitOps_Workflow_Guide.md", prioritas: "Medium", template: "Ya", estimasi: "5-7 hari", stakeholder: "DevOps, SRE", dependencies: "19,64", compliance: "-", tools: "GitLab, ArgoCD", phase: "3"},
-            {no: 79, tahapan: "Quality Assurance", nama: "Code Quality Standards", deskripsi: "SonarQube rules, code coverage requirements", file: "79_Code_Quality_Standards.docx", prioritas: "High", template: "Ya", estimasi: "3-5 hari", stakeholder: "Tech Lead, QA", dependencies: "12", compliance: "-", tools: "SonarQube, ESLint", phase: "2"},
-            {no: 80, tahapan: "Business Intelligence", nama: "Data Pipeline Documentation", deskripsi: "ETL/ELT processes, data transformation rules", file: "80_Data_Pipeline_Documentation.pdf", prioritas: "Medium", template: "Ya", estimasi: "1-2 minggu", stakeholder: "Data Engineer, BI Analyst", dependencies: "9,75", compliance: "GDPR", tools: "Apache Airflow, dbt", phase: "3"}
+            {no: 78, tahapan: "DevOps", nama: "GitOps Workflow Documentation", deskripsi: "Git-based deployment workflow (ArgoCD, Flux)", file: "78_GitOps_Workflow_Guide.md", prioritas: "Medium", template: "Partial", estimasi: "1 minggu", stakeholder: "DevOps", dependencies: "35", compliance: "-", tools: "Git, ArgoCD", phase: "3"},
+            {no: 79, tahapan: "Quality Assurance", nama: "Code Quality Standards", deskripsi: "SonarQube rules, code coverage requirements", file: "79_Code_Quality_Standards.docx", prioritas: "High", template: "Ya", estimasi: "3-5 hari", stakeholder: "Tech Lead, QA", dependencies: "12", compliance: "-", tools: "SonarQube", phase: "2"},
+            {no: 80, tahapan: "Business Intelligence", nama: "Data Pipeline Documentation", deskripsi: "ETL/ELT processes, data transformation rules", file: "80_Data_Pipeline_Documentation.pdf", prioritas: "High", template: "Partial", estimasi: "1-2 minggu", stakeholder: "Data Engineer", dependencies: "54", compliance: "GDPR", tools: "Airflow, dbt", phase: "3"}
         ];
 
-        let filteredData = [...documentData];
-
-        function renderTable() {
-            const tbody = document.getElementById('tableBody');
-            tbody.innerHTML = '';
-
-            filteredData.forEach(doc => {
-                const row = tbody.insertRow();
+        // Function to render the table
+        function renderTable(data) {
+            const tableBody = document.getElementById('tableBody');
+            tableBody.innerHTML = '';
+            
+            data.forEach(doc => {
+                const row = document.createElement('tr');
+                
+                // Add priority class based on priority value
+                const priorityClass = `priority-${doc.prioritas.toLowerCase()}`;
+                
                 row.innerHTML = `
-                    <td><strong>${doc.no}</strong></td>
-                    <td><span class="phase-badge phase-${doc.phase}">${doc.tahapan}</span></td>
-                    <td><strong>${doc.nama}</strong></td>
+                    <td>${doc.no}</td>
+                    <td>${doc.tahapan}</td>
+                    <td>${doc.nama}</td>
                     <td>${doc.deskripsi}</td>
-                    <td><code>${doc.file}</code></td>
-                    <td><span class="priority-${doc.prioritas.toLowerCase()}">${doc.prioritas}</span></td>
+                    <td>${doc.file}</td>
+                    <td class="${priorityClass}">${doc.prioritas}</td>
                     <td>${doc.template}</td>
                     <td>${doc.estimasi}</td>
                     <td>${doc.stakeholder}</td>
@@ -369,59 +396,79 @@
                     <td>${doc.tools}</td>
                     <td><span class="phase-badge phase-${doc.phase}">Phase ${doc.phase}</span></td>
                 `;
+                
+                tableBody.appendChild(row);
             });
-
-            updateStats();
+            
+            // Update filtered count
+            document.getElementById('filteredDocs').textContent = data.length;
         }
 
-        function updateStats() {
-            document.getElementById('totalDocs').textContent = documentData.length;
-            document.getElementById('criticalDocs').textContent = documentData.filter(d => d.prioritas === 'Critical').length;
-            document.getElementById('filteredDocs').textContent = filteredData.length;
-        }
-
+        // Function to filter data
         function filterData() {
-            const phaseFilter = document.getElementById('phaseFilter').value;
-            const priorityFilter = document.getElementById('priorityFilter').value;
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const phaseFilter = document.getElementById('phaseFilter').value.toLowerCase();
+            const priorityFilter = document.getElementById('priorityFilter').value.toLowerCase();
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            
+            const filteredData = documentData.filter(doc => {
+                const matchesPhase = phaseFilter === '' || doc.tahapan.toLowerCase().includes(phaseFilter);
+                const matchesPriority = priorityFilter === '' || doc.prioritas.toLowerCase() === priorityFilter;
+                const matchesSearch = searchInput === '' || 
+                    doc.nama.toLowerCase().includes(searchInput) || 
+                    doc.deskripsi.toLowerCase().includes(searchInput) ||
+                    doc.file.toLowerCase().includes(searchInput);
+                
+                return matchesPhase && matchesPriority && matchesSearch;
+            });
+            
+            renderTable(filteredData);
+        }
 
-            filteredData = documentData.filter(doc => {
-                const matchesPhase = !phaseFilter || doc.tahapan === phaseFilter;
-                const matchesPriority = !priorityFilter || doc.prioritas === priorityFilter;
-                const matchesSearch = !searchTerm || 
-                    doc.nama.toLowerCase().includes(searchTerm) ||
-                    doc.deskripsi.toLowerCase().includes(searchTerm) ||
-                    doc.tahapan.toLowerCase().includes(searchTerm);
-
+        // Function to download CSV
+        function downloadCSV() {
+            const filteredData = documentData.filter(doc => {
+                const phaseFilter = document.getElementById('phaseFilter').value.toLowerCase();
+                const priorityFilter = document.getElementById('priorityFilter').value.toLowerCase();
+                const searchInput = document.getElementById('searchInput').value.toLowerCase();
+                
+                const matchesPhase = phaseFilter === '' || doc.tahapan.toLowerCase().includes(phaseFilter);
+                const matchesPriority = priorityFilter === '' || doc.prioritas.toLowerCase() === priorityFilter;
+                const matchesSearch = searchInput === '' || 
+                    doc.nama.toLowerCase().includes(searchInput) || 
+                    doc.deskripsi.toLowerCase().includes(searchInput) ||
+                    doc.file.toLowerCase().includes(searchInput);
+                
                 return matchesPhase && matchesPriority && matchesSearch;
             });
 
-            renderTable();
-        }
-
-        function downloadCSV() {
-            const csvContent = [
-                ['No', 'Tahapan', 'Nama Dokumen', 'Deskripsi', 'File', 'Prioritas', 'Template', 'Estimasi', 'Stakeholder', 'Dependencies', 'Compliance', 'Tools', 'Phase'],
-                ...filteredData.map(doc => [
-                    doc.no, doc.tahapan, doc.nama, doc.deskripsi, doc.file, 
-                    doc.prioritas, doc.template, doc.estimasi, doc.stakeholder, 
-                    doc.dependencies, doc.compliance, doc.tools, doc.phase
-                ])
-            ].map(row => row.map(cell => `"${cell}"`).join(',')).join('\n');
-
-            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            let csv = 'No,Tahapan,Nama Dokumen,Deskripsi Singkat,Nama File,Prioritas,Template,Estimasi Waktu,Stakeholder Utama,Dependencies,Compliance,Tools,Phase\n';
+            
+            filteredData.forEach(doc => {
+                csv += `"${doc.no}","${doc.tahapan}","${doc.nama}","${doc.deskripsi}","${doc.file}","${doc.prioritas}","${doc.template}","${doc.estimasi}","${doc.stakeholder}","${doc.dependencies}","${doc.compliance}","${doc.tools}","Phase ${doc.phase}"\n`;
+            });
+            
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
             const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = 'document_list.csv';
+            link.setAttribute('href', url);
+            link.setAttribute('download', 'document_list.csv');
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
             link.click();
+            document.body.removeChild(link);
         }
 
-        // Event listeners
+        // Initialize event listeners
         document.getElementById('phaseFilter').addEventListener('change', filterData);
         document.getElementById('priorityFilter').addEventListener('change', filterData);
         document.getElementById('searchInput').addEventListener('input', filterData);
 
         // Initial render
-        renderTable();
+        renderTable(documentData);
 
+        // Calculate critical docs count
+        const criticalCount = documentData.filter(doc => doc.prioritas === 'Critical').length;
+        document.getElementById('criticalDocs').textContent = criticalCount;
     </script>
+</body>
+</html>
