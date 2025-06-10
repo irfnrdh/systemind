@@ -64,3 +64,9 @@ lalu berlanjut ke **Enhanced Version**
 ---
 
 *Catatan: Daftar ini dapat disesuaikan berdasarkan metodologi pengembangan (Agile, Waterfall, DevOps) dan kompleksitas proyek (Small, Medium, Enterprise).*
+
+
+## Insight
+- https://arc42.org/
+- https://www.openproject.org/
+- https://c4model.com/
